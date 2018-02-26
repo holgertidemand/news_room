@@ -3,6 +3,7 @@ Given(/^I visit the site$/) do
 end
 
 Given("the following news articles exist") do |table|
-  # table is a Cucumber::MultilineArgument::DataTable
-  pending # Write code here that turns the phrase above into concrete actions
+  table.hashes.each do |article|
+    FactoryBot.create(:article, article)
+  end
 end
