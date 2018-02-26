@@ -15,6 +15,11 @@ gem 'turbolinks', '~> 5'
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
 end
 
 group :development do
