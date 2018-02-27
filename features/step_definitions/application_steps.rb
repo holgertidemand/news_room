@@ -7,3 +7,8 @@ Given("the following news articles exist") do |table|
     FactoryBot.create(:article, article)
   end
 end
+
+
+Given('I click on {string}') do |link|
+  click_link_or_button link
+end
