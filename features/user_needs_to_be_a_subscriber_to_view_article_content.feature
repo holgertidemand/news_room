@@ -11,6 +11,11 @@ Feature: User needs to be a subscriber to view article content
       | Trump elected President of US | The impossible did actually happen...          |
       | Doomsday nears                | Trump elected president. End of World is near? |
 
+    Given the following users exist
+      | email                 |
+      | random@random.com     |
+
+    And I am logged in as "random@random.com"
 
     Scenario: Visitor clicks an article link and get redirected to Purchase Subscription page
       Given I visit the site
