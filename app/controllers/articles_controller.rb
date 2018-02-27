@@ -6,10 +6,10 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     if !current_user
-      flash[:error] = 'You need to be logged in to access this content'
-      redirect_to root_path
+      flash[:notice] = 'You need to be logged in to access this content'
+      redirect_to new_user_registration_path
     elsif !current_user.subscriber?
-      flash[:error] = 'You need to be a subscriber to access this content'
+      flash[:notice] = 'You need to be a subscriber to access this content'
       redirect_to new_subscription_path
     else
       render :show
