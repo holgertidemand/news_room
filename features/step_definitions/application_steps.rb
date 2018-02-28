@@ -7,3 +7,19 @@ Given("the following news articles exist") do |table|
     FactoryBot.create(:article, article)
   end
 end
+
+
+Given('I click on {string}') do |link|
+  click_link_or_button link
+end
+
+Given(/^the following users exist$/) do |table|
+  table.hashes.each do |user|
+    FactoryBot.create(:user, user)
+  end
+end
+
+And(/^I am logged in as "([^"]*)"$/) do |email|
+  user = User.find_by(email: email)
+  login_as user, scope: :user
+end

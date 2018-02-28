@@ -12,3 +12,13 @@ rescue NameError
 end
 
 Cucumber::Rails::Database.javascript_strategy = :truncation
+
+World Warden::Test::Helpers
+
+Before do
+  Warden.test_mode!
+end
+
+After do
+  Warden.test_reset!
+end

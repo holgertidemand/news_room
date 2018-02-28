@@ -5,9 +5,9 @@ Feature: Visitor can view list of available news articles
 
   Background:
     Given the following news articles exist
-      | title                          | content                                        |
+      | title                         | content                                        |
       | Trump elected President of US | The impossible did actually happen...          |
-      | Doomsday nears                 | Trump elected president. End of World is near? |
+      | Doomsday nears                | Trump elected president. End of World is near? |
 
   Scenario: User visit the site
     Given I visit the site
