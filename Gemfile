@@ -13,6 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
 gem 'devise'
 gem 'pundit'
+gem 'haml-rails'
 
 group :development, :test do
   gem 'pry-byebug'
