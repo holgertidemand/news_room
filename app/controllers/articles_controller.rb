@@ -6,12 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    begin
-      @article = Article.find(params[:id])
-      authorize @article
-    rescue Pundit::NotAuthorizedError
-      flash[:notice] = 'You need to be a subscriber to access this content'
-      redirect_to new_subscription_path
-    end
+    @article = Article.find(params[:id])
+    authorize @article
   end
 end
