@@ -16,6 +16,8 @@ gem 'pundit'
 gem 'haml-rails'
 
 group :development, :test do
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'factory_bot_rails'
