@@ -14,6 +14,7 @@ gem 'turbolinks', '~> 5'
 gem 'devise'
 gem 'pundit'
 gem 'haml-rails'
+gem 'stripe-rails'
 
 group :development, :test do
   gem 'selenium-webdriver'
@@ -26,6 +27,8 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'coveralls', require: false
+  gem 'dotenv-rails'
+
 end
 
 group :development do

@@ -23,3 +23,12 @@ And(/^I am logged in as "([^"]*)"$/) do |email|
   user = User.find_by(email: email)
   login_as user, scope: :user
 end
+
+Given(/^I am on the create subscription page$/) do
+  visit new_subscription_path
+end
+
+And(/^I click on the "([^"]*)" button$/) do |button|
+  click_button button
+  sleep(5)
+end
