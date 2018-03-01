@@ -15,3 +15,8 @@ Then(/^I should be redirected to a register account page$/) do
   expect(page.current_path).to eq new_user_registration_path
 
 end
+
+And(/^"([^"]*)" should be a subscriber$/) do |email|
+  user = User.find_by(email: email)
+  expect(user.subscriber?).to eq true
+end
