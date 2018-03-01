@@ -33,6 +33,8 @@ World Warden::Test::Helpers
 
 Before do
   Warden.test_mode!
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(OmniAuthFixtures.facebook_response)
 end
 
 After do
