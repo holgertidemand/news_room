@@ -1,0 +1,36 @@
+@import 'kickstart_rails';
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+.container {
+  @include container();
+  margin-left: 100px;
+  margin-right: 100px;
+  border: 0;
+}
+
+.main-nav {
+  @include navbar();
+  @include navbar($background-color: orange);
+}
+
+.growl {
+  &.alert-error {
+    background: map-get($colors, red);
+  }
+}
+
+.growl_container {
+  width: 500px;
+}
+
+// Testing this out
+form {
+  @include form();
+  &input {
+    @include form_group();
+  }
+}
+.group {
+  @include form_group();
+}

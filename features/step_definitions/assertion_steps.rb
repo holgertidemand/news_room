@@ -2,7 +2,14 @@ Then(/^I should see "([^"]*)"$/) do |content|
   expect(page).to have_content content
 end
 
+Then(/^I should see a popup saying "([^"]*)"$/) do |content|
+  within '.growl_container' do
+    expect(page).to have_content content
+  end
+end
+
 Then('I should be redirected to a purchase subscription page') do
+  sleep 3
   expect(page.current_path).to eq new_subscription_path
 end
 
@@ -12,8 +19,8 @@ Then(/^I should be redirected the show page for "([^"]*)"$/) do |article_title|
 end
 
 Then(/^I should be redirected to a register account page$/) do
+  sleep 3
   expect(page.current_path).to eq new_user_registration_path
-
 end
 
 And(/^"([^"]*)" should be a subscriber$/) do |email|

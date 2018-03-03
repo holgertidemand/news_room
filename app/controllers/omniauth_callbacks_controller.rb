@@ -14,6 +14,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def failure
-    redirect_to root_path, notice: 'That did not work!'
+    flash[:error] = 'That did not work!'
+    redirect_to root_path
   end
 end

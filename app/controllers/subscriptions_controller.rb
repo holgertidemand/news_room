@@ -26,7 +26,7 @@ class SubscriptionsController < ApplicationController
       current_user.save
       redirect_to root_path, notice: 'Welcome as a subscriber!'
     else
-      redirect_to new_subscriptions_path, notice: 'WTF?'
+      redirect_to new_subscriptions_path, error: 'WTF?'
     end
   end
 end

@@ -2,12 +2,45 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %title NewsRoom
     = csrf_meta_tags
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+
   %body
-    = link_to 'Login with Facebook', user_facebook_omniauth_authorize_path
-    %p.notice= notice
-    %p.alert= alert
-    = yield
+    %header.main-nav
+      %nav
+        %ul
+          %li
+            = link_to 'News Room', root_path, style: 'font-size: 1.5rem;'
+        %ul
+          %li
+            - if current_user
+              %span
+                %i.fa.fa-user
+                = current_user.email
+            -else
+              = link_to 'Login with Facebook', user_facebook_omniauth_authorize_path
+
+
+
+
+    .container
+      - if flash[:error]
+        :javascript
+          k$.growl({
+            title: 'Not allowed!',
+            text: "#{flash[:error]}",
+            type: 'alert-error',
+            delay: 5000
+          })
+      - elsif flash[:notice]
+        :javascript
+          k$.growl({
+            title: 'Cool',
+            text: "#{flash[:notice]}",
+            type: 'alert-success',
+            delay: 5000
+          })
+      = yield

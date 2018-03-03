@@ -12,4 +12,20 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require kickstart_rails
 //= require_tree .
+
+
+function ready(fn) {
+    if (document.readyState!=='loading') {
+        fn();
+    }
+    else {
+        document.addEventListener('DOMContentLoaded', fn);
+    }
+}
+
+ready(function() {
+    // Your code
+    console.log('ready to rock!')
+});

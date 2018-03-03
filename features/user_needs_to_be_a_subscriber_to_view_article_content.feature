@@ -1,3 +1,4 @@
+@javascript
 Feature: User needs to be a subscriber to view article content
   As a News Agency
   In order to make money
@@ -16,19 +17,18 @@ Feature: User needs to be a subscriber to view article content
       | random@random.com     | false      |
       | subscriber@random.com | true       |
 
-
   Scenario: Non registered visitor clicks an article link and get redirected to Purchase Subscription page
     And I visit the site
     When I click on "Trump elected President of US"
     Then I should be redirected to a register account page
-    And I should see "You need to be logged in to access this content"
+    And I should see a popup saying "You need to be logged in to access this content"
 
   Scenario: Non subscribing user clicks an article link and get redirected to Purchase Subscription page
     And I visit the site
     Given I am logged in as "random@random.com"
     When I click on "Trump elected President of US"
     Then I should be redirected to a purchase subscription page
-    And I should see "You need to be a subscriber to access this content"
+    And I should see a popup saying "You need to be a subscriber to access this content"
 
   Scenario: A subscriber clicks on an article link and is allowed to view content
     Given I am logged in as "subscriber@random.com"

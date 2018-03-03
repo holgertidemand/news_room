@@ -1,3 +1,4 @@
+@javascript
 Feature: Visitor can view list of available news articles
   As a visitor
   In order to stay in touch with current events

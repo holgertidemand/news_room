@@ -8,7 +8,7 @@ end
 gem 'rails', '~> 5.1.5'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
-gem 'sass-rails', '~> 5.0'
+gem 'sass'
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
 gem 'devise'
@@ -16,6 +16,8 @@ gem 'omniauth-facebook', '~> 4.0'
 gem 'pundit'
 gem 'haml-rails'
 gem 'stripe-rails', '~> 1.1', '>= 1.1.2'
+gem 'kickstart_rails', '~> 3.1', '>= 3.1.2'
+gem 'font-awesome-sass', '~> 5.0.6'
 
 group :development, :test do
   gem 'selenium-webdriver'
