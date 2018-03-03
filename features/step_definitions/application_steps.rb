@@ -54,3 +54,7 @@ end
 And(/^I have incorrect credetialls$/) do
   OmniAuth.config.mock_auth[:facebook] = :invalid_credentials
 end
+
+When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
+  fill_in field, with: value
+end
