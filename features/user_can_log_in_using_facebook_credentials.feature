@@ -10,3 +10,9 @@ Feature: User can log in using Facebook credentials
     Then I should be redirected to the landing page
     And I should see "Successfully authenticated from Facebook account"
     And the my account should state that I signed up with Facebook
+
+  Scenario: Visitor fails to sign up with Facebook OmniAuth
+    Given I visit the site
+    And I have incorrect credetialls
+    And I click on "Login with Facebook"
+    Then I should see "That did not work!"
