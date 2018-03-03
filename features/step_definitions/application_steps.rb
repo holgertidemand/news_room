@@ -50,3 +50,7 @@ end
 Then(/^show me the page$/) do
   save_and_open_page
 end
+
+And(/^I have incorrect credetialls$/) do
+  OmniAuth.config.mock_auth[:facebook] = :invalid_credentials
+end
