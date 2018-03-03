@@ -24,8 +24,8 @@ Feature: User needs to be a subscriber to view article content
     And I should see "You need to be logged in to access this content"
 
   Scenario: Non subscribing user clicks an article link and get redirected to Purchase Subscription page
-    Given I am logged in as "random@random.com"
     And I visit the site
+    Given I am logged in as "random@random.com"
     When I click on "Trump elected President of US"
     Then I should be redirected to a purchase subscription page
     And I should see "You need to be a subscriber to access this content"

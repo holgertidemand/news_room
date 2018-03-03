@@ -12,9 +12,14 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
 gem 'devise'
+gem 'omniauth-facebook', '~> 4.0'
 gem 'pundit'
+gem 'haml-rails'
+gem 'stripe-rails', '~> 1.1', '>= 1.1.2'
 
 group :development, :test do
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'factory_bot_rails'
@@ -23,6 +28,9 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'coveralls', require: false
+  gem 'dotenv-rails'
+  gem 'launchy'
+
 end
 
 group :development do

@@ -29,5 +29,9 @@ module NewsRoom
       generate.controller_specs false
       generate.system_tests false
     end
+
+    config.stripe.secret_key = ENV['STRIPE_SECRET']
+    config.stripe.publishable_key = ENV['STRIPE_APP']
+    config.stripe.endpoint = '/payment/stripe-integration'
   end
 end

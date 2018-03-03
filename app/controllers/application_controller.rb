@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
-  private
+  #private
 
   def user_not_authorized
     flash[:notice] = 'You need to be a subscriber to access this content'
